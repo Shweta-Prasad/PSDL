@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<pic18f4550.h>
+
+int arr[5] = {1, 2, 3, 4, 5};
+
+void main() {
+    TRISB = 0; // Set PORTB as output
+    int search_no = 4;
+    int found = 0; // Flag to indicate whether the number is found
+
+    for(int i = 0; i < 5; i++) {
+        if(arr[i] == search_no) {
+            found = 1;
+            break; // Exit the loop if the number is found
+        }
+    }
+
+    if(found)
+        PORTB = 1; // Indicate that the number is found
+    else
+        PORTB = 0; // Indicate that the number is not found
+}

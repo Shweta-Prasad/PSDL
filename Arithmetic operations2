@@ -1,0 +1,26 @@
+#include <pic18f4550.h>
+
+void main() {
+    int num1 = 10;  // First number
+    int num2 = 5;   // Second number
+
+    int addition = num1 + num2;
+    int subtraction = num1 - num2;
+    int multiplication = num1 * num2;
+    int division = num1 / num2;
+
+    TRISA = 0x00; // Set PORTA as output
+    TRISB = 0x00; // Set PORTB as output
+    TRISC = 0x00; // Set PORTC as output
+    TRISD = 0x00; // Set PORTD as output
+
+    // Display results on different ports
+    PORTA = addition;
+    PORTB = subtraction;
+    PORTC = multiplication;
+    PORTD = division;
+
+    while(1) {
+        // Your additional code or loop can be added here if needed
+    }
+}

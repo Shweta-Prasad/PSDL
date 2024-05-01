@@ -1,0 +1,45 @@
+//LED blinking
+
+#include<pic18f4550.h>
+
+void delay(unsigned int time)
+{
+    unsigned int i, j;
+    for(i=0; i<time; i++)
+        for(j=0; j<5000; j++);
+}
+
+void main()
+{
+    TRISB=0x00;
+    LATB=0xFF;
+    
+    while(1)   //loop forever
+    {
+        LATB = ~LATB;
+        delay(500);
+    }     
+}
+*********************************
+//LED blinking in group of 4 (LATB=0x0F)
+
+#include<pic18f4550.h>
+
+void delay(unsigned int time)
+{
+    unsigned int i, j;
+    for(i=0; i<time; i++)
+        for(j=0; j<5000; j++);
+}
+
+void main()
+{
+    TRISB=0x00;
+    LATB=0x0F;  //last 4 bit-1
+    
+    while(1)   //loop forever
+    {
+        LATB = ~LATB;
+        delay(500);
+    }     
+}

@@ -1,0 +1,50 @@
+//Sorting array in ascending order
+
+#include<stdio.h>
+#include<pic18f4550.h>
+
+void main()
+{
+    int i, j, temp;
+    int arr[]={10,2,5,1,6};
+    
+    for(i=0; i<=4; i++){          //point to LHS number
+        for(j=i+1; j<=4; j++){    //point to RHS number
+            if(arr[i] > arr[j]){  // if LHS>RHS, change the position
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] =temp;
+            }
+        }
+    }
+    
+    TRISA=0;
+    for(int k=0; k<4; k++)
+        PORTA = arr[k];
+}
+
+**********************************
+//Sorting array in descending order (j=0)
+
+#include<stdio.h>
+#include<pic18f4550.h>
+
+void main()
+{
+    int i, j, temp;
+    int arr[]={10,2,5,1,6};
+    
+    for(i=0; i<=4; i++){
+        for(j=0; j<=4; j++){
+            if(arr[i] > arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] =temp;
+            }
+        }
+    }
+    
+    TRISA=0;
+    for(int k=0; k<4; k++)
+        PORTA = arr[k];
+}

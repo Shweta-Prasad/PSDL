@@ -1,0 +1,67 @@
+//Multiplication by addition
+
+#include<stdio.h>
+#include<pic18f4550.h>
+
+void main()
+{
+    int a=10;
+    int b=5;
+    
+    int product=0;
+   
+    for(int i=0; i<b; i++)
+        product = product + a;
+    
+    TRISA=0;
+    PORTA=product;
+}
+
+*********************************
+//Division by subtraction
+
+#include<stdio.h>
+#include<pic18f4550.h>
+
+void main()
+{
+    int divident=10;
+    int divisor=5;
+    int quotient=0;
+    
+    while(divident>=divisor){
+        divident = divident - divisor;
+        quotient++;
+    } 
+    
+    TRISB=0;
+    PORTB=quotient;
+}
+
+**********************************
+#include<stdio.h>
+#include<pic18f4550.h>
+
+void main()
+{
+    int a=10;
+    int b=5;
+    
+    int product=0;
+   
+    for(int i=0; i<b; i++)
+        product = product + a;
+    
+    TRISA=0;
+    PORTA=product;
+
+    int quotient=0;
+    
+    while(a>=b){
+        a = a - b;
+        quotient++;
+    } 
+    
+    TRISB=0;
+    PORTB=quotient;
+}

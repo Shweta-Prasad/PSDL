@@ -1,4 +1,4 @@
-#include <pic18f4550.h> //Contains PIC18F4550 specifications
+#include <pic18f4550.h>
 
 #define LCD_EN LATAbits.LA1
 #define LCD_RS LATAbits.LA0

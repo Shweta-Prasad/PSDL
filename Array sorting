@@ -8,8 +8,8 @@ void main()
     int i, j, temp;
     int arr[]={10,2,5,1,6};
     
-    for(i=0; i<=4; i++){          //point to LHS number
-        for(j=i+1; j<=4; j++){    //point to RHS number
+    for(i=0; i<5; i++){          //point to LHS number
+        for(j=i+1; j<5; j++){    //point to RHS number
             if(arr[i] > arr[j]){  // if LHS>RHS, change the position
                 temp = arr[i];
                 arr[i] = arr[j];
@@ -19,7 +19,7 @@ void main()
     }
     
     TRISA=0;
-    for(int k=0; k<4; k++)
+    for(int k=0; k<5; k++)
         PORTA = arr[k];
 }
 
@@ -34,8 +34,8 @@ void main()
     int i, j, temp;
     int arr[]={10,2,5,1,6};
     
-    for(i=0; i<=4; i++){
-        for(j=0; j<=4; j++){
+    for(i=0; i<5; i++){
+        for(j=0; j<5; j++){
             if(arr[i] > arr[j]){
                 temp = arr[i];
                 arr[i] = arr[j];
@@ -45,6 +45,6 @@ void main()
     }
     
     TRISA=0;
-    for(int k=0; k<4; k++)
+    for(int k=0; k<5; k++)
         PORTA = arr[k];
 }

@@ -2,7 +2,7 @@
 #define Buzzer LATAbits.LATA5
 unsigned int count = 0;
 
-void interrupt Timer1_ISR()
+void Timer1_ISR()
 {
     if(TMR1IF==1)
     {
@@ -18,7 +18,6 @@ void interrupt Timer1_ISR()
     TMR1IF = 0;
     }
 }
-
 
 void main()
 {
